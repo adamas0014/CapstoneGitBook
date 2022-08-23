@@ -210,7 +210,7 @@ The last part of the report goes over the early development progress that has be
 
 The MIT Cheetah is an engineering research project that was developed through the MIT Biomimetics laboratory. The word _biomimetics_ describes using systems found in nature to inspire technological systems \[1]. The goal of this project was to design and build a quadruped robot that can emulate the same kinematic motion that is found in animals found in nature like the cheetah. This inspiration from nature drove the design of each aspect of the project, from limb design - the way that joints connect together in the leg and shoulder, to pathing - the way that the limb linkages coordinate together, to gait design - the way that the limbs work together to achieve a specific walking pattern.
 
-![](<../.gitbook/assets/0 (1)>)
+![](../.gitbook/assets/0)
 
 _**Figure 1: Original MIT Cheetah \[**_2_**]**_
 
@@ -220,7 +220,7 @@ There have been many direct iterations and forks of the original project as tech
 
 The most prominent _fork_ of the original project was the MIT Mini Cheetah. It started as an initiative within the biomimetics laboratory lead by Ben Katz, an undergraduate student with a background in Mechanical Engineering. The MIT Mini Cheetah consolidated many of the lessons learned in previous iterations. It had a simpler control system in a robust body, and was able to be reproduced at a more cost effective price.
 
-![](<../.gitbook/assets/1 (2)>)
+![](../.gitbook/assets/1)
 
 _**Figure 2: MIT Mini Cheetah \[**_3_**]**_
 
@@ -381,9 +381,9 @@ Overviewed how to apply matrix transformations to 3D coordinate vectors.
 
 ### Cheetah Biomimetics <a href="#_v5g0xrpd5vw9" id="_v5g0xrpd5vw9"></a>
 
-| Human Skeleton                                                                                                                       | Cheetah Skeleton                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| <p><img src="../.gitbook/assets/5 (1)" alt="" data-size="original"></p><p><em><strong>Figure 3: Human skeleton [4]</strong></em></p> | <p><img src="../.gitbook/assets/6 (2)" alt="" data-size="original"></p><p><em><strong>Figure 4: Cheetah skeleton [5]</strong></em></p> |
+| Human Skeleton                                                                                                                       | Cheetah Skeleton                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| <p><img src="../.gitbook/assets/5 (2)" alt="" data-size="original"></p><p><em><strong>Figure 3: Human skeleton [4]</strong></em></p> | <p><img src="../.gitbook/assets/6" alt="" data-size="original"></p><p><em><strong>Figure 4: Cheetah skeleton [5]</strong></em></p> |
 
 There is a striking difference between the leg of a human when compared to a quadruped mammal like a cheetah. The difference can be summarized as a result of _function_ and _efficiency_.
 
@@ -409,7 +409,7 @@ _**Figure**_ 6_**: Leg joining diagram \[**_11_**]**_
 
 Each leg is a 3-motor system with feedback position control. Two motors are mounted together in parallel inside the knee assembly. One motor actuates the angle of the _upper link_ while the second motor in the knee assembly actuates the angle of the _lower link_ with the use of a belt and pulley system. More robust quadrupeds may opt for a chain and gear system instead. The _lower link_ is mounted directly to that pulley which intersects both links, changing the angle according to the gear’s rotational position.
 
-![](<../.gitbook/assets/9 (1)>)
+![](../.gitbook/assets/9)
 
 _**Figure**_ 7_**: Hip abduction-adduction example**_
 
@@ -425,13 +425,13 @@ The assembly consists of an outrunner brushless motor built into a planetary gea
 
 **Planetary Gearbox:**
 
-![](<../.gitbook/assets/11 (1)>)
+![](<../.gitbook/assets/11 (2)>)
 
 _**Figure**_ 9_**: Planetary gearbox example \[1**_3_**]**_
 
 The primary benefit of a planetary gearbox over other gearing systems is its form factor. They provide a high rate of energy transfer per unit volume in an _enclosed assembly_. The motor shaft is typically fixed to the sun gear while the carrier is fixed to the centre of each of the 3 planetary gears. Each planetary gear is allowed free rotation while being mounted to the carrier because of the bearings that connect the two parts together.
 
-![](<../.gitbook/assets/12 (2)>)
+![](<../.gitbook/assets/12 (1)>)
 
 _**Figure**_ 10_**: Planetary gearbox example 2 \[1**_4_**]**_
 
@@ -453,7 +453,7 @@ Within the quadruped robot’s _software stack_, packages must be created that c
 
 Simple algorithms coordinate motion independently from environmental stimuli, while more complex packages can adapt the _gait pattern_ to these stimuli. An example of this is coordinating leg position on uneven terrain or abrupt pushes from an outside actor.
 
-![](../.gitbook/assets/13)
+![](<../.gitbook/assets/13 (2)>)
 
 _**Figure**_ 11_**: Sophisticated gait control \[1**_5_**]**_
 
@@ -479,7 +479,7 @@ A simple gait algorithm can be created using coordinate vector transformations a
 
 The kinematics of each leg of the Mini Cheetah can be described as a _2D + 1D model_. This is because the leg only moves along a 2D plane and it is the responsibility of the hip joint to abduct/adduct the 2D motion to reach a 3D coordinate.
 
-![](<../.gitbook/assets/14 (2)>)
+![](../.gitbook/assets/14)
 
 _**Figure**_ 12_**: 2D+1D sketch**_
 
@@ -517,7 +517,7 @@ In this project, we are planning to use ROS2 rather than ROS1. This is because o
 
 #### ROS2 Versions: <a href="#_1kvsgss0dp35" id="_1kvsgss0dp35"></a>
 
-![](../.gitbook/assets/15)
+![](<../.gitbook/assets/15 (1)>)
 
 _**Figure**_ 13_**: Recent ROS2 releases \[1**_6_**]**_
 
@@ -553,7 +553,7 @@ The main two languages that dominate the ROS ecosystem are C++ and Python. C++ i
 
 The following diagram shows the directory structure of most professional ROS packages:
 
-![](<../.gitbook/assets/16 (1)>)
+![](../.gitbook/assets/16)
 
 _**Figure**_ 14_**: ROS2 package structure**_
 
@@ -561,7 +561,7 @@ _**Figure**_ 14_**: ROS2 package structure**_
 
 A handful of control systems will all be running simultaneously working together to keep the quadruped walking stably. Due to this complexity the control system will be built in a software stack with many of the core features having their own dedicated software packages and communicating with the other packages to relay information. It is important to build the control system in this way from the ground up as it will naturally organize the code in a logical way. This will greatly aid in the development and troubleshooting of the control systems. ROS is ideal here to serve as the middleware for all of these subsystems as it allows for programming in C++ and python as well as offering communication between these packages using ROS topics.
 
-![](../.gitbook/assets/17)
+![](<../.gitbook/assets/17 (1)>)
 
 _**Figure**_ 15_**: Cheetah Mini control system \[1**_7_**]**_
 
@@ -605,7 +605,7 @@ The hardware communications technology that was specified by the community partn
 
 Throughout the research and design process, the core capstone team constructed a variety of diagrams to better communicate our understanding of quadruped design, de-aggregate subsystem components, and set thoughtful goals for the future.
 
-![](<../.gitbook/assets/18 (2)>)
+![](<../.gitbook/assets/18 (1)>)
 
 _**Figure**_ 16_**: Use Case Diagram**_
 
@@ -642,7 +642,7 @@ The design for this robot will be a derivation of the MIT Mini Cheetah. The robo
 
 The concepts used in the design of this robot will include inverse kinematics, motor control, process feedback and control loops(PID), computer vision, and programming. For the programming side, C++ and Python will be used in conjunction with ROS middleware. The majority of the functions and locomotion processes will be done in C++ and the vision system and follow mode pathing will be done in Python. ROS will serve as the middleware for the C++ and Python code, as well as running simulations using Gazebo and visualization using RViz.
 
-![](<../.gitbook/assets/20 (1)>)
+![](<../.gitbook/assets/20 (2)>)
 
 _**Figure 18: Inverse kinematics model \[1**_8_**]**_
 

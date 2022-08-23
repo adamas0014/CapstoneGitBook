@@ -80,7 +80,7 @@ Figure 1: Original MIT Cheetah
 
 There have been multiple interactions and forks of the MIT Cheetah project. The original was designed around the goal of maximizing the force that each leg can produce and implemented a 4-joint leg design. One of the metrics that was analyzed by this design was the force distribution of each leg, once it impacts the ground and at a steady balanced state. The primary metric was speed of the animal-like design when in a gallop. This project was seen primarily as a research initiative to explore feasibility.
 
-![](<../.gitbook/assets/1 (1)>)
+![](<../.gitbook/assets/1 (2)>)
 
 Figure 2: MIT Mini Cheetah
 
@@ -170,7 +170,7 @@ Leg Assembly:
 
 Each leg is a 3-motor system with feedback position control. Two motors are mounted together in parallel inside the knee assembly. One motor actuates the angle of the _upper link_ while the second motor in the knee assembly actuates the angle of the _lower link_ with the use of a belt and gear system. The _lower link_ is mounted directly to that pulley which intersects both links, changing the angle according to the gear’s rotational position.
 
-![](../.gitbook/assets/3)
+![](<../.gitbook/assets/3 (2)>)
 
 Figure 4: Hip abduction-adduction example
 
@@ -188,13 +188,13 @@ The assembly consists of an outrunning motor built into a planetary gearbox. The
 
 Planetary Gearbox:
 
-![](../.gitbook/assets/5)
+![](<../.gitbook/assets/5 (1)>)
 
 Figure 6: Planetary gearbox example
 
 The primary benefit of a planetary gearbox over other gearing systems is its form factor. They provide a high rate of energy transfer per unit volume in an enclosed assembly. The motor shaft is typically fixed to the sun gear while the carrier is fixed to the centre of each of the 3 planetary gears. Each planetary gear is allowed free rotation while being mounted to the carrier because of the bearings that connect the two parts together.
 
-![](<../.gitbook/assets/6 (1)>)
+![](<../.gitbook/assets/6 (2)>)
 
 Figure 7: Planetary gearbox example 2
 
@@ -226,7 +226,7 @@ Control System:
 
 The original MIT Cheetah has the following control system layout:
 
-![](../.gitbook/assets/7)
+![](<../.gitbook/assets/7 (2)>)
 
 Figure 8: MIT Cheetah System Architecture Block Diagram
 
@@ -256,7 +256,7 @@ UML Diagrams:
 
 Throughout the design process, a use case, state machine and system architecture diagram were made to help with the design process. Firstly, a use case diagram was constructed to help define the functions and further expand upon the objectives previously established in the initial design phase.
 
-![](../.gitbook/assets/8)
+![](<../.gitbook/assets/8 (2)>)
 
 Figure 9: Use Case Diagram
 
@@ -276,43 +276,43 @@ Figure 11: State machine diagram, system initialization and de-initialization
 
 The above diagrams both display how the power de-initialization and initialization work respectively. When powering down, the quadruped will be equipped to show flashing warning lights signaling its powering down. From this, it will terminate the video stream deriving from OpenCV and the quadruped will go to a lying down position. Once this is complete, warning lights will become solid and the microprocessor will be powering down, turning off the warning lights. Similarly, when powering up, warning lights will again be used to help with signaling and indication.
 
-![](<../.gitbook/assets/11 (2)>)
+![](<../.gitbook/assets/11 (1)>)
 
 Figure 12: State machine diagram, manual mode
 
 This state goes into depth with respect to the manual mode of the quadruped. Once quadruped is set to manual mode, the quadruped will be controllable through a joystick. When the quadruped receives a move command from the joystick, a path will be created. Using dynamic gait control, the system will be able to move using an accelerometer and pressure sensors to balance.
 
-![](<../.gitbook/assets/12 (1)>)
+![](../.gitbook/assets/12)
 
 Figure 13: State machine diagram, follow mode
 
 In follow mode, instead of the operator controlling the quadruped through a joystick, the quadruped will follow the operator. This will be done through the use of QR code. An operator will be given a valid QR code for the quadruped to recognize. In this mode, OpenCV will need to be utilized for this to be possible. The quadruped will start searching for a target when set to follow mode. Once a QR code is found, it will calculate the operator’s position relative to its own position by calculating how far the distance of the QR code is. It will then communicate this position back to the controller node so it can reach the position of the operator.
 
-![](<../.gitbook/assets/13 (1)>)
+![](../.gitbook/assets/13)
 
 Figure 14: State machine diagram, QR code recognition
 
 This state explains the QR code process more in depth. For the quadruped to run in follow mode, the OpenCV library within python is utilized for computer vision. Once the quadruped is set to follow mode, it will enable OpenCV to activate. The program will be getting the QR code through video capture. It will then read the video capture and use the decode function from the pyzbar.pyzbar library, to search for a QR code. If there is no QR code detected, then an invalid message will occur. The decode function will also be looped as the quadruped will continuously look for a target in follow mode. If there is detection, it will then move onto calculating the QR code’s position from the quadruped to generate motion instructions.
 
-![](<../.gitbook/assets/14 (1)>)
+![](<../.gitbook/assets/14 (2)>)
 
 Figure 15: Main python script for QR Code recognition
 
 The python script above describes the general structure on how the QR recognition process will function for the quadruped robot. The openCV and _numpy_ libraries are first imported into the program. Along with this, the decode function within the _pyzbar_ library is imported as well. This decode function is specifically used for QR and barcode recognition.
 
-![](<../.gitbook/assets/15 (1)>)
+![](../.gitbook/assets/15)
 
 Figure 16: Decode function
 
 Taking a closer look at the decode function, which is available in the open source pyzbar library, allows for a QR or barcode to be read into the function from an image or a video stream. In this case, the QR code is a jpeg file. The jpeg file is then taken into the decode function. The function then calculates if the given image is either a barcode or a QR code.
 
-![](../.gitbook/assets/16)
+![](<../.gitbook/assets/16 (2)>)
 
 Figure 16: Output
 
 Upon successful execution of the python script, the result of the decode function will be called back into the main function. The type of code will be displayed along with the bounding rectangle box. X and y coordinates of the polygon are also displayed as not all QR and barcodes reside in a perfect rectangle, hence a polygon exists. Since the image decoded is a QR code, the result will spit out “type= ‘QRCODE’.” This means that there is successful recognition of the given QR code allowing for the quadruped to proceed with its next process.
 
-![](<../.gitbook/assets/17 (2)>)
+![](../.gitbook/assets/17)
 
 Figure 17: System architecture diagram
 
@@ -334,7 +334,7 @@ There are multiple methods that can be used in inverse kinematic calculations. T
 
 The use of inverse kinematics will be a key concept that will be used in programming the locomotion of the quadruped. The robot will have 4 legs, each with 3 degrees of freedom. With each move of a leg the inverse kinematics will have to be calculated to determine what angle to position each of the three motors at while also eliminating non optimal solutions. Since these calculations will have to be done in real time on the robot it is important that the calculations can be done quickly, which means trigonometry and the Jacobian matrix method would be optimal as the trial and error method is slower and less efficient.
 
-![](../.gitbook/assets/19)
+![](<../.gitbook/assets/19 (1)>)
 
 Figure 19: Process control loop block diagram
 
@@ -350,7 +350,7 @@ Each leg of the quadruped can be broken down into two distinct parts that must w
 
 The following is a function implemented in C++ which calculates the angle of each corresponding revolute joint based on a goal position (x, y):
 
-![](<../.gitbook/assets/20 (2)>)
+![](<../.gitbook/assets/20 (1)>)
 
 Figure 20: Example C++ code, inverse kinematics angle calculations
 
