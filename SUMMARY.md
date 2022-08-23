@@ -4,9 +4,8 @@
 
 ## ✍ Reports
 
-* [Semester 1 Midterm](reports/semester-1-midterm/README.md)
-  * [Page 1](reports/semester-1-midterm/page-1.md)
-* [Page 2](reports/page-2.md)
+* [Semester 1 Midterm Report](reports/semester-1-midterm-report.md)
+* [Semester 1 Final Report](reports/semester-1-final-report.md)
 
 ***
 
