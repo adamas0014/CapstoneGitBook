@@ -14,7 +14,7 @@ As we can see in the image below, the leg coordinates are clamped and translated
 
 Using sine and cosine on different axis of the same coordinate allows for elliptical movement.
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
 This elliptical movement is used to position the tip of the legs.
 
@@ -30,5 +30,5 @@ A matrix is used to define the plane made by the feet of the robot dog.&#x20;
 
 This footprint matrix is transformed using the rotation matrix.&#x20;
 
-
+![](<../.gitbook/assets/image (2).png>)
 
