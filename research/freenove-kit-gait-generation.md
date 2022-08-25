@@ -8,7 +8,7 @@ Movement is achieved through string movement commands that are parsed and coordi
 
 ![](<../.gitbook/assets/image (1).png>)
 
-As we can see in the image below, the leg coordinates are clamped and translated by user configured values, but the general motion is determined by sine and cosine functions.
+As we can see in the image below, the leg coordinates are clamped and translated by user configured values, but the general motion is determined by sine and cosine functions. This data is clampled to a user-specified height.
 
 ![](../.gitbook/assets/image.png)
 
@@ -28,7 +28,7 @@ A matrix is used to define the plane made by the feet of the robot dog.&#x20;
 
 ![](<../.gitbook/assets/image (3).png>)
 
-This footprint matrix is transformed using the rotation matrix.&#x20;
+This footprint matrix is transformed using the rotation matrix. The body plane is then subtracted from this transformed footprint, to yield the transformed body orientation.&#x20;
 
 ![](<../.gitbook/assets/image (2).png>)
 
