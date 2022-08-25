@@ -9,7 +9,7 @@
 
 ## Research
 
-* [Research](research/research.md)
+* [Freenove Kit Gait Generation](research/freenove-kit-gait-generation.md)
 
 ## Meeting Minutes
 
