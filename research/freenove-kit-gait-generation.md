@@ -6,11 +6,11 @@ This repository contains control code, user interfaces, and hardware interfaces 
 
 Movement is achieved through string movement commands that are parsed and coordinated using a switch/case statement. In general, each case specifies the direction and axis to apply the gait function to.
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 As we can see in the image below, the leg coordinates are clamped and translated by user configured values, but the general motion is determined by sine and cosine functions. This data is clampled to a user-specified height.
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (2).png>)
 
 Using sine and cosine on different axis of the same coordinate allows for elliptical movement.
 
@@ -22,13 +22,12 @@ However, it is noticed that side-stepping has a smaller amplitude of movement, w
 
 Balance, for this robot dog kit, is achieved using an on-board IMU sensor. This sensor information is used in the construction of transformation matrices.
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (4) (1).png>)
 
 A matrix is used to define the plane made by the feet of the robot dog.&#x20;
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (1).png>)
 
 This footprint matrix is transformed using the rotation matrix. The body plane is then subtracted from this transformed footprint, to yield the transformed body orientation.&#x20;
 
-![](<../.gitbook/assets/image (2).png>)
-
+![](<../.gitbook/assets/image (2) (2).png>)
