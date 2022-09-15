@@ -9,6 +9,7 @@
 
 ## Research
 
+* [Resources](research/resources.md)
 * [Unitree G1](research/unitree-g1.md)
 * [Freenove Kit Gait Generation](research/freenove-kit-gait-generation.md)
 
